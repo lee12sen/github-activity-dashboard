@@ -1,0 +1,36 @@
+{
+  "name": "github-activity-dashboard",
+  "version": "1.0.0",
+  "description": "이 프로젝트는 GitHub API를 활용하여 사용자의 커밋, 이슈, 풀 리퀘스트 등을 추적해서 주간 학습량, 언어 분포, 스트릭을 시각화하는 GitHub 활동 대시보드입니다.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest run --passWithNoTests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lee12sen/github-activity-dashboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/lee12sen/github-activity-dashboard/issues"
+  },
+  "homepage": "https://github.com/lee12sen/github-activity-dashboard#readme",
+  "dependencies": {
+    "next": "^16.3.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.0"
+  }
+}
