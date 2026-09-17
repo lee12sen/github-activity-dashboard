@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" font-family="'Malgun Gothic','Segoe UI',sans-serif">
+  <!-- background -->
+  <rect x="0" y="0" width="1200" height="780" fill="#ffffff"/>
+
+  <!-- header -->
+  <rect x="0" y="0" width="1200" height="64" fill="#f4f4f5" stroke="#d4d4d8"/>
+  <text x="32" y="38" font-size="18" font-weight="bold" fill="#27272a">GitHub 학습 활동 대시보드</text>
+  <circle cx="1140" cy="32" r="16" fill="#e4e4e7" stroke="#a1a1aa" stroke-dasharray="3,3"/>
+  <text x="1140" y="37" font-size="11" fill="#71717a" text-anchor="middle">avatar</text>
+
+  <text x="32" y="90" font-size="13" fill="#71717a">한 페이지 대시보드 — 카드 3개, 별도 라우팅 없음</text>
+
+  <!-- card 1: issue/PR status -->
+  <g>
+    <rect x="32" y="120" width="360" height="600" rx="8" fill="none" stroke="#a1a1aa" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="52" y="150" font-size="15" font-weight="bold" fill="#27272a">① 이슈 / PR 처리 현황</text>
+    <line x1="52" y1="162" x2="372" y2="162" stroke="#d4d4d8"/>
+
+    <rect x="52" y="180" width="140" height="60" fill="#f4f4f5" stroke="#d4d4d8"/>
+    <text x="122" y="205" font-size="11" fill="#71717a" text-anchor="middle">열림 이슈</text>
+    <text x="122" y="228" font-size="20" font-weight="bold" fill="#3f3f46" text-anchor="middle">##</text>
+
+    <rect x="212" y="180" width="140" height="60" fill="#f4f4f5" stroke="#d4d4d8"/>
+    <text x="282" y="205" font-size="11" fill="#71717a" text-anchor="middle">열림 PR</text>
+    <text x="282" y="228" font-size="20" font-weight="bold" fill="#3f3f46" text-anchor="middle">##</text>
+
+    <text x="52" y="272" font-size="12" fill="#52525b">최근 N주 처리 추이 (번다운)</text>
+    <rect x="52" y="284" width="320" height="160" fill="#fafafa" stroke="#d4d4d8" stroke-dasharray="4,3"/>
+    <polyline points="62,300 122,320 182,335 242,370 302,390 362,420" fill="none" stroke="#a1a1aa" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="212" y="360" font-size="11" fill="#a1a1aa" text-anchor="middle">[번다운 라인 자리]</text>
+
+    <text x="52" y="480" font-size="12" fill="#52525b">방치된 이슈/PR 목록 (14일+)</text>
+    <rect x="52" y="492" width="320" height="34" fill="#fafafa" stroke="#d4d4d8" stroke-dasharray="4,3"/>
+    <text x="64" y="513" font-size="11" fill="#a1a1aa">#123 이슈 제목 자리 — 18일째 방치</text>
+    <rect x="52" y="530" width="320" height="34" fill="#fafafa" stroke="#d4d4d8" stroke-dasharray="4,3"/>
+    <text x="64" y="551" font-size="11" fill="#a1a1aa">#118 PR 제목 자리 — 21일째 방치</text>
+  </g>
+
+  <!-- card 2: commit frequency -->
+  <g>
+    <rect x="412" y="120" width="360" height="600" rx="8" fill="none" stroke="#a1a1aa" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="432" y="150" font-size="15" font-weight="bold" fill="#27272a">② 커밋 빈도</text>
+    <line x1="432" y1="162" x2="752" y2="162" stroke="#d4d4d8"/>
+
+    <text x="432" y="188" font-size="12" fill="#52525b">이번 주 커밋 <tspan font-weight="bold" fill="#3f3f46">##</tspan> · 지난주 대비 <tspan fill="#a1a1aa">▲/▼ ##%</tspan></text>
+
+    <text x="432" y="216" font-size="12" fill="#52525b">최근 8주 막대그래프</text>
+    <rect x="432" y="228" width="300" height="260" fill="#fafafa" stroke="#d4d4d8" stroke-dasharray="4,3"/>
+    <g fill="#d4d4d8">
+      <rect x="450" y="400" width="24" height="70"/>
+      <rect x="486" y="380" width="24" height="90"/>
+      <rect x="522" y="420" width="24" height="50"/>
+      <rect x="558" y="350" width="24" height="120"/>
+      <rect x="594" y="360" width="24" height="110"/>
+      <rect x="630" y="320" width="24" height="150"/>
+      <rect x="666" y="340" width="24" height="130"/>
+      <rect x="702" y="300" width="24" height="170"/>
+    </g>
+    <g font-size="10" fill="#a1a1aa" text-anchor="middle">
+      <text x="462" y="484">W1</text><text x="498" y="484">W2</text><text x="534" y="484">W3</text><text x="570" y="484">W4</text>
+      <text x="606" y="484">W5</text><text x="642" y="484">W6</text><text x="678" y="484">W7</text><text x="714" y="484">W8</text>
+    </g>
+
+    <text x="432" y="520" font-size="12" fill="#52525b">※ 실제 수치는 GitHub API 연동 후 채워짐 (현재는 자리 배치)</text>
+  </g>
+
+  <!-- card 3: roadmap progress -->
+  <g>
+    <rect x="792" y="120" width="376" height="600" rx="8" fill="none" stroke="#a1a1aa" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="812" y="150" font-size="15" font-weight="bold" fill="#27272a">③ 로드맵 진행률</text>
+    <line x1="812" y1="162" x2="1148" y2="162" stroke="#d4d4d8"/>
+
+    <text x="812" y="192" font-size="12" fill="#52525b">전체 진행률</text>
+    <rect x="812" y="204" width="336" height="20" rx="10" fill="#f4f4f5" stroke="#d4d4d8"/>
+    <rect x="812" y="204" width="140" height="20" rx="10" fill="#d4d4d8"/>
+    <text x="980" y="219" font-size="11" fill="#71717a" text-anchor="middle">##%</text>
+
+    <text x="812" y="256" font-size="12" fill="#52525b">단계별 체크리스트</text>
+    <g font-size="12" fill="#52525b">
+      <rect x="812" y="270" width="16" height="16" fill="#d4d4d8"/>
+      <text x="836" y="283">0단계 — 계층 구분 원칙 확정</text>
+      <rect x="812" y="296" width="16" height="16" fill="none" stroke="#a1a1aa"/>
+      <text x="836" y="309">1단계 — 틀 + 가짜 데이터</text>
+      <rect x="812" y="322" width="16" height="16" fill="none" stroke="#a1a1aa"/>
+      <text x="836" y="335">2단계 — 커밋 빈도 연결</text>
+      <rect x="812" y="348" width="16" height="16" fill="none" stroke="#a1a1aa"/>
+      <text x="836" y="361">3단계 — 이슈/PR 현황 추가</text>
+      <rect x="812" y="374" width="16" height="16" fill="none" stroke="#a1a1aa"/>
+      <text x="836" y="387">3단계 — 로드맵 진행률 추가</text>
+      <rect x="812" y="400" width="16" height="16" fill="none" stroke="#a1a1aa"/>
+      <text x="836" y="413">4단계 — 통합 점검</text>
+    </g>
+
+    <text x="812" y="460" font-size="12" fill="#52525b">※ docs/ROADMAP.md 체크리스트 기준으로 계산</text>
+  </g>
+
+  <text x="600" y="756" font-size="11" fill="#a1a1aa" text-anchor="middle">와이어프레임 (저해상도 레이아웃 초안) — 실제 색상/폰트/수치는 구현 단계에서 확정</text>
+</svg>
