@@ -1,3 +1,51 @@
 body {
     margin: 0;
+    background: #f5f7fa;
+    color: #202124;
+    font-family: sans-serif;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 20px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    padding: 24px;
+    background: white;
+    border: 1px solid #e1e5e9;
+    border-radius: 12px;
+}
+
+.commit-bar-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 40px;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.commit-bar {
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.commit-bar-fill {
+    height: 100%;
+    background: #2563eb;
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
 }
