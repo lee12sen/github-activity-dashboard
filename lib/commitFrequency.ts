@@ -13,7 +13,7 @@ type WeeklyCommit = {
 
 export function groupByWeek(commits: CommitItem[]): WeeklyCommit[] {
     const now = new Date();
-    const buckets: WeeklyCommit[] = [];
+    const result: WeeklyCommit[] = [];
 
     for (let i = 7; i >= 0; i--) {
         const start = new Date(now);
@@ -26,18 +26,13 @@ export function groupByWeek(commits: CommitItem[]): WeeklyCommit[] {
 
         const label = i === 0 ? "이번 주" : `${i}주 전`;
 
-        buckets.push({
-            week: label,
-            count: 0,
-        });
+        const count = commits.filter((commit) => {
+            const date = new Date(commit.commit.author.date);
+            return date >= start && date <= end;
+        }).length;
 
-        for (const commit of commits) {
-            const commitDate = new Date(commit.commit.author.date);
-            if (commitDate >= start && commitDate <= end) {
-                buckets[buckets.length - 1].count++;
-            }
-        }
+        result.push({ week: label, count });
     }
 
-    return buckets;
+    return result;
 }
