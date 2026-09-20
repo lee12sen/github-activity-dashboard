@@ -4,7 +4,7 @@
   "description": "이 프로젝트는 GitHub API를 활용하여 사용자의 커밋, 이슈, 풀 리퀘스트 등을 추적해서 주간 학습량, 언어 분포, 스트릭을 시각화하는 GitHub 활동 대시보드입니다.",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
     "test": "vitest run --passWithNoTests"
