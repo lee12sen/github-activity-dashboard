@@ -21,7 +21,7 @@ export default function CommitFrequencyCard() {
                         <div className="commit-bar">
                             <div
                                 className="commit-bar-fill"
-                                style={{ width: `${item.count * 8}%`}}
+                                style={{ width: `${Math.min(item.count * 8, 100)}%`}}
                             />
                         </div>
                         <span>{item.count}개</span>
