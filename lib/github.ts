@@ -15,3 +15,15 @@ export async function fetchRecentCommits() {
 
     return response.json();
 }
+
+export async function fetchIssuesAndPullRequests() {
+    const response = await fetch(
+        "https://api.github.com/repos/lee12sen/github-activity-dashboard/issues?state=all&per_page=100"
+    );
+
+    if (!response.ok) {
+        throw new Error(`GitHub API 오류: ${response.status}`);
+    }
+
+    return response.json();
+}
