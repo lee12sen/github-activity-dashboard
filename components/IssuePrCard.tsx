@@ -1,25 +1,45 @@
-export default function IssuePrCard() {
-    const openIssues = 3;
-    const openPullRequests = 1;
-    const staleItems = [
-        { type: "Issue", title: "로그인 오류 수정", days: 18 },
-        { type: "PR", title: "대시보드 UI 개선", days: 22 },
-    ];
+type StaleItem = {
+    number: number;
+    title: string;
+    type: "Issue" | "PR";
+    updated_at: string;
+};
 
+type IssuePrCount = {
+    openIssues: number;
+    closedIssues: number;
+    openPullRequests: number;
+    closedPullRequests: number;
+};
+
+
+export default function IssuePrCard({
+    counts,
+    staleItems,
+}: {
+    counts: IssuePrCount;
+    staleItems: StaleItem[];
+}) {
     return (
         <article className="card">
             <h2>이슈 / PR 현황</h2>
 
-            <p>열린 이슈: {openIssues}개</p>
-            <p>열린 PR: {openPullRequests}개</p>
+            <p>열린 이슈: {counts.openIssues}개</p>
+            <p>닫힌 이슈: {counts.closedIssues}개</p>
+            <p>열린 PR: {counts.openPullRequests}개</p>
+            <p>닫힌 PR: {counts.closedPullRequests}개</p>
 
             <h3>방치된 항목</h3>
             <ul>
-                {staleItems.map((item) => (
-                    <li key={item.title}>
-                        {item.type}: {item.title} ({item.days}일 방치)
-                    </li>
-                ))}
+                {staleItems.length === 0 ? (
+                    <li>방치된 항목이 없습니다.</li>
+                ) : (
+                    staleItems.map((item) => (
+                        <li key={item.title}>
+                            {item.type}: {item.title} ({item.updated_at})
+                        </li>
+                    ))
+                )}
             </ul>
         </article>
     );

@@ -13,8 +13,8 @@ export default async function Home() {
 
     const issuesAndPullRequests = await fetchIssuesAndPullRequests();
     const staleItems = findStaleItems(issuesAndPullRequests);
-    
-    console.log(staleItems);
+    const issuePrCounts = countIssuesAndPullRequests(issuesAndPullRequests);
+
 
 
 
@@ -23,7 +23,7 @@ export default async function Home() {
             <Header />
 
             <section className="dashboard-grid">
-                <IssuePrCard />
+                <IssuePrCard counts={issuePrCounts} staleItems={staleItems} />
                 <CommitFrequencyCard weeklyCommits={weeklyCommits} />
                 <RoadmapProgressCard />
             </section>
