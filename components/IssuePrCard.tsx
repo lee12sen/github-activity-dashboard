@@ -16,10 +16,21 @@ type IssuePrCount = {
 export default function IssuePrCard({
     counts,
     staleItems,
+    error,
 }: {
     counts: IssuePrCount;
     staleItems: StaleItem[];
+    error?: string
 }) {
+
+    if (error) {
+        return (
+            <article className="card">
+                <h2>이슈 / PR 현황</h2>
+                <p>{error}</p>
+            </article>
+        );
+    }
     return (
         <article className="card">
             <h2>이슈 / PR 현황</h2>
